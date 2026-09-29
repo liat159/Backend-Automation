@@ -55,12 +55,18 @@ jobs:
           for i in {1..30}; do
             if curl -s http://localhost:8000/health > /dev/null; then
               echo "FastAPI server is ready"
-              break
+              exit 0
             fi
 
             echo "Waiting for FastAPI server..."
             sleep 2
           done
+
+          echo "FastAPI server failed to start."
+          echo "===== server.log ====="
+          cat server.log
+          echo "======================"
+          exit 1
       - name: Run tests
         env:
           DB_HOST: localhost
