@@ -6,6 +6,10 @@ from data.factories.order_factory import OrderFactory
 
 @pytest.mark.negative
 @pytest.mark.regression
+@allure.severity(allure.severity_level.NORMAL)
+@allure.feature("Orders API")
+@allure.story("Invalid Order Payload")
+@allure.description("Verify that the Orders API rejects an invalid order payload with an appropriate HTTP error response.")
 def test_invalid_order_payload(api_client):
 
     # 1. BUILD INVALID TEST DATA

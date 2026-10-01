@@ -4,6 +4,10 @@ import allure
 
 
 @pytest.mark.smoke
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("System Health")
+@allure.story("Service Availability")
+@allure.description("Verify that the application is available and returns a healthy status from the health endpoint.")
 def test_health_smoke(api_client):
 
     # 1. HEALTH CHECK

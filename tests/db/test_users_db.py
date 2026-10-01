@@ -4,6 +4,10 @@ import allure
 
 
 @pytest.mark.db
+@allure.severity(allure.severity_level.NORMAL)
+@allure.feature("Database")
+@allure.story("User Query")
+@allure.description("Verify that the database client handles a user query and returns either a valid user object or None when no user is found.")
 def test_user_schema_in_db(db):
 
     # 1. QUERY USER FROM DATABASE

@@ -4,6 +4,14 @@ import allure
 
 
 @pytest.mark.e2e
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("Order Lifecycle")
+@allure.story("Create and Update Order")
+@allure.description(
+    "Verify the complete order lifecycle by creating an order, "
+    "validating its initial database status, updating the status via API, "
+    "and verifying the updated status in the database."
+)
 def test_order_lifecycle(api_client, db):
 
     # 1. CREATE

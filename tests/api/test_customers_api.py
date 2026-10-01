@@ -4,6 +4,10 @@ import allure
 
 
 @pytest.mark.api
+@allure.severity(allure.severity_level.NORMAL)
+@allure.feature("Customers API")
+@allure.story("Get Customers")
+@allure.description("Verify that the customers endpoint responds with either a successful response or a not-found response.")
 def test_get_customers_list(api_client):
 
     # 1. GET CUSTOMERS

@@ -4,6 +4,10 @@ import allure
 
 
 @pytest.mark.smoke
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("System Health")
+@allure.story("System Availability")
+@allure.description("Verify that the application is available and the health endpoint returns HTTP 200.")
 def test_basic_system_alive(api_client):
 
     # 1. VERIFY SYSTEM IS ALIVE

@@ -5,6 +5,10 @@ from data.factories.order_factory import OrderFactory
 
 
 @pytest.mark.negative
+@allure.severity(allure.severity_level.NORMAL)
+@allure.feature("Orders API")
+@allure.story("Product Validation")
+@allure.description("Verify that the Orders API rejects an order with an empty product value.")
 def test_empty_product_validation(api_client):
 
     # 1. BUILD INVALID TEST DATA

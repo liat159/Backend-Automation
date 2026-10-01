@@ -5,6 +5,10 @@ import allure
 
 @pytest.mark.api
 @pytest.mark.regression
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("Orders API")
+@allure.story("Create Order")
+@allure.description("Verify that a valid order can be created successfully via the API.")
 def test_create_order_api(api_client):
 
     # 1. CREATE ORDER

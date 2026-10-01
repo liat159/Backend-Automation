@@ -6,6 +6,10 @@ from data.factories.order_factory import OrderFactory
 @pytest.mark.e2e
 @pytest.mark.smoke
 @pytest.mark.regression
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature("Order Lifecycle")
+@allure.story("Create Order")
+@allure.description("Verify that an order can be created via the API and that the created order is correctly persisted in the database.")
 def test_create_order_flow(api_client, db):
 
     # 1. BUILD TEST DATA

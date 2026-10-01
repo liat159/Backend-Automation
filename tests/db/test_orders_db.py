@@ -4,6 +4,10 @@ import allure
 
 
 @pytest.mark.db
+@allure.severity(allure.severity_level.NORMAL)
+@allure.feature("Orders Database")
+@allure.story("Order Persistence")
+@allure.description("Verify that an order created through the API is correctly persisted in the database with the expected product and quantity.")
 def test_order_exists_in_db(db, api_client):
 
     # 1. CREATE ORDER VIA API
